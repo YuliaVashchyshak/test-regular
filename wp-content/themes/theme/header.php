@@ -21,17 +21,12 @@
     <header>
       <div class="container">
         <div class="navbar-head">
-          <?php
-          if (get_field('logo', 'options')) {
-          ?>
-            <a class="logo" href="/">
-              <img src="<?php echo wp_get_attachment_image_url(get_field('logo', 'options'), 'full_hd'); ?>" alt="">
-            </a>
-          <?php
-          }
-          ?>
+          <div class="logo">
+            <?php the_custom_logo() ?>
+          </div>
 
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+            aria-expanded="false" aria-controls="navbar">
             <div class="animate-burger">
               <span class="top"></span>
               <span class="middle"></span>
@@ -50,15 +45,11 @@
               'menu_class' => 'nav navbar-nav'
             )
           );
-          if (get_field('phone', 'options')) {
           ?>
-            <a class="call-box header__phone-box" href="tel:<?php echo get_field('phone', 'options'); ?>">
+          <!-- <a class="call-box header__phone-box" href="tel:<?php echo get_field('phone', 'options'); ?>">
               <i class=" icon-phone"></i>
               <span><?php echo get_field('phone', 'options'); ?></span>
-            </a>
-          <?php
-          }
-          ?>
+            </a> -->
 
         </div>
       </div>
