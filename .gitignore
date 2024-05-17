@@ -1,0 +1,16 @@
+.idea
+.xml
+**/build
+**/node_modules
+**/DS_Store
+**/ai1wm-backups
+**/all-in-one-wp-migration
+**/w3-total-cache
+wp-content/uploads/**
+**/debug.log
+**/lcwll
+**/backups-dup-lite
+**/pdf_generator/custom
+**/pdf_generator/vendor
+wp-config.php
+package-lock.json

@@ -1,0 +1,23 @@
+.container {
+  max-width: calc(1280px + 128px);
+  padding: 0 20px;
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  @media screen and (min-width: $mobile-menu-breakpoint){
+    padding: 0 64px;
+  }
+}
+
+body {
+  overflow-x: hidden;
+  font-family: $Moderat;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.main-page-wrap {
+  margin-top: 80px;
+}

@@ -1,0 +1,29 @@
+
+.button-primary {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 700;
+  background: #C7D530;
+  border-radius: 32px;
+  min-width: 180px;
+  padding: 17px 48px;
+  height: 48px;
+  line-height: 12px;
+  text-align: center;
+  color: #004439;
+
+  svg {
+    path {
+      transition: all .3s;
+    }
+  }
+
+  &:hover {
+    background: #004439;
+    color: #C7D530;
+    svg path {
+      stroke: #C7D530;
+    }
+  }
+
+}

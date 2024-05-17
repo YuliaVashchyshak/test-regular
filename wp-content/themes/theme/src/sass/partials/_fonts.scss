@@ -1,0 +1,16 @@
+@include font-face('Moderat',
+  "../../fonts/moderat/Moderat-Bold",
+  700);
+@include font-face('Moderat',
+  "../../fonts/moderat/Moderat-Medium",
+  500);
+@include font-face('Moderat',
+  "../../fonts/moderat/Moderat-Regular",
+  400);
+
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
