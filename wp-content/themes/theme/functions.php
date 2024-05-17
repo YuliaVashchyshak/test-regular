@@ -65,6 +65,10 @@ if (function_exists('acf_add_options_page')) {
     acf_add_options_page();
 }
 
+// start add logo
+add_theme_support('custom-logo');
+// end add logo
+
 
 function remove_menus()
 {
