@@ -15,19 +15,15 @@ body {
   overflow-x: hidden;
   font-family: Montserrat;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.5;
   font-weight: normal;
-  color: #000;
-  background-color: aliceblue;
+  color: #1f1f1f;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-.main-page-wrap {
-  margin-top: 80px;
-}
 
 .title {
   font-family: Italiana;
@@ -40,7 +36,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 61px;
+  padding: 16px 61px;
   width: fit-content;
   background-color: #69ae96;
   font-weight: 500;
