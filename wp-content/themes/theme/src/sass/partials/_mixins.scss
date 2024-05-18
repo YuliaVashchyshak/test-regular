@@ -16,7 +16,7 @@
   &:not(.collapsed) {
     .animate-burger {
       .top {
-        transform: translateY(5px) rotate(-45deg);
+        transform: translateY(7px) rotate(-45deg);
       }
       .middle {
         transform: translateX(10px);
@@ -35,7 +35,7 @@
     span {
       position: absolute;
       width: 100%;
-      height: 3px;
+      height: 2px;
       background-color: #262724;
       left: 0;
       transition: transform .5s, opacity .6s;

@@ -51,11 +51,6 @@
             )
           );
           ?>
-          <!-- <a class="call-box header__phone-box" href="tel:<?php echo get_field('phone', 'options'); ?>">
-              <i class=" icon-phone"></i>
-              <span><?php echo get_field('phone', 'options'); ?></span>
-            </a> -->
-
         </div>
       </div>
     </header>
