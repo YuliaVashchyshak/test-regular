@@ -104,10 +104,10 @@ if (function_exists('acf_register_block_type')) {
         ));
 
         acf_register_block_type(array(
-            'name'              => 'test',
-            'title'             => __('Test'),
+            'name'              => 'seo',
+            'title'             => __('Seo'),
             'description'       => __('Just another awesome block.'),
-            'render_template'   => 'blocks/test/block.php',
+            'render_template'   => 'blocks/seo/block.php',
             'category'          => 'common',
             'icon'              => 'book-alt',
             'keywords'          => array('block', 'custom'),

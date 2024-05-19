@@ -212,7 +212,6 @@ header {
 
       >a {
         display: inline-block;
-        // text-transform: capitalize;
         line-height: normal;
         transition: all .3s;
 
@@ -233,39 +232,6 @@ header {
           font-weight: 500;
         }
       }
-    }
-  }
-
-  .call-box {
-    float: right;
-    font-size: 22px;
-    text-align: center;
-    padding: 7px 0 7px 32px;
-    border-left: 2px solid #333;
-
-    @media screen and (max-width: 1240px) {
-      padding: 7px 0 7px 15px;
-    }
-
-    @media screen and (max-width: $mobile-menu-breakpoint) {
-      display: none;
-    }
-
-    &:hover {
-      color: $orange;
-
-      span {
-        opacity: 0.8;
-      }
-    }
-
-    span {
-      display: block;
-      font-size: 12px;
-      color: $black;
-      margin: 3px auto 0 auto;
-      font-weight: 600;
-      transition: all .5s;
     }
   }
 }
