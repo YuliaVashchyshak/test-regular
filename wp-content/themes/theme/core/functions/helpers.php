@@ -134,7 +134,7 @@ function my_acf_json_load_point($paths)
 add_action('after_setup_theme', 'theme_register_thumbnails');
 function theme_register_thumbnails()
 {
-    add_theme_support('post-thumbnails', array('our_team', 'page', 'post', 'work_posttype'));
+    add_theme_support('post-thumbnails');
 }
 
 function get_formated_range($startDate, $endDate)

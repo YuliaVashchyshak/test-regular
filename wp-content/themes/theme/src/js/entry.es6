@@ -4,6 +4,6 @@ require("./vendor/bootstrap-transition");
 require("./vendor/bootstrap-collapse");
   
 (function ($) {
-  // $(".splash__counter").length > 0 && require("./template_parts/section_splash.es6");
+  $(".clients__slider").length > 0 && require("./template_parts/section_clients.es6");
 
 })(jQuery); 

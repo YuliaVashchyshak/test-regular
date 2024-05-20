@@ -113,5 +113,36 @@ if (function_exists('acf_register_block_type')) {
             'keywords'          => array('block', 'custom'),
             'supports'          => array('anchor' => true)
         ));
+        acf_register_block_type(array(
+            'name'              => 'clients',
+            'title'             => __('Clients'),
+            'description'       => __('Just another awesome block.'),
+            'render_template'   => 'blocks/clients/block.php',
+            'category'          => 'common',
+            'icon'              => 'book-alt',
+            'keywords'          => array('block', 'custom'),
+            'supports'          => array('anchor' => true)
+        ));
     }
 }
+
+//== start add custom post type ==//
+add_action('init', 'clients_posttype');
+function clients_posttype()
+{
+    register_post_type(
+        'clients',
+        array(
+            'labels' => array(
+                'name' => __('Clients', 'textdomain'),
+                'singular_name' => __('Client', 'textdomain'),
+            ),
+            'public'        => true,
+            'has_archive'  => true,
+            'hierarchical' => false,
+            'supports' => array('title', 'author', 'page-attributes', 'thumbnail', 'editor'),
+            'rewrite'  => array('slug' => 'clients'),
+        )
+    );
+    }
+//== end add custom post type ==//
