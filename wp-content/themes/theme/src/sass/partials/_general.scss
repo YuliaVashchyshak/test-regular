@@ -37,6 +37,10 @@ html {
   border: 2px transparent solid;
   transition: all .3s;
   box-shadow: 0 12px 24px 0 rgba(58, 149, 117, 0.28);
+
+  @media screen and (max-width: $mobile-menu-breakpoint) {
+    padding: 8px 20px;
+  }
 }
 
 .button:hover {
