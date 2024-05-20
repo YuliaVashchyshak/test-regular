@@ -2,7 +2,17 @@
     position: relative;
     height: 350px;
 
-    &__container {}
+    @media screen and (max-width: 1400px) {
+        height: 230px;
+    }
+
+    @media screen and (max-width: $mobile-menu-breakpoint) {
+        height: 150px;
+    }
+
+    @media screen and (max-width: $mobile-menu-breakpoint768) {
+        height: 250px;
+    }
 
     &__absolute {
         position: absolute;
@@ -47,6 +57,7 @@
         letter-spacing: 2.4px;
         line-height: normal;
         margin-bottom: 20px;
+
 
         @media screen and (max-width: $mobile-menu-breakpoint) {
             font-size: 30px;
@@ -94,6 +105,7 @@
         @media screen and (max-width: $mobile-menu-breakpoint) {
             height: 420px;
         }
+
         @media screen and (max-width: $mobile-menu-breakpoint768) {
             height: 350px;
         }

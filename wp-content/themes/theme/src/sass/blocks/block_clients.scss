@@ -25,6 +25,10 @@
     @media (max-width: $small-desktop-breakpoint1080) {
       align-items: flex-end;
     }
+
+    @media (max-width: $mobile-menu-breakpoint768) {
+      display: block;
+    }
   }
 
   &__title {
@@ -38,12 +42,19 @@
       color: #69ae96;
     }
 
+    @media screen and (max-width: 1200px) {
+      font-size: 60px;
+    }
+
+
     @media (max-width: $small-desktop-breakpoint1080) {
       max-width: 416px;
     }
 
     @media (max-width: $mobile-menu-breakpoint768) {
       padding-right: 0;
+      font-size: 40px;
+      max-width: none;
     }
 
   }
@@ -55,8 +66,10 @@
     gap: 20px;
 
     @media (max-width: $mobile-menu-breakpoint768) {
-      display: none;
+      justify-content: flex-start;
+      margin-top: 10px;
     }
+
   }
 
   &__btn {
