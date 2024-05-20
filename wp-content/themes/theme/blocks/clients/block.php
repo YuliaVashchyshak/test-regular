@@ -53,7 +53,7 @@ $the_query = new WP_Query($args);
                         <div class="swiper-wrapper clients__slider-wrapper">
                             <?php while ($the_query->have_posts()) { ?>
                                 <?php $the_query->the_post(); ?>
-                                <div class="clients__item swiper-slide">
+                                <div class="clients__item swiper-slide" style="background-image: url(<?php  bloginfo('template_url') ?>/src/sass/image/bg.png)">
                                     <div class="clients__media">
                                         <div class="clients__play-btn play-video" data-video="<?php the_field('video', get_the_ID()) ?>">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26">
