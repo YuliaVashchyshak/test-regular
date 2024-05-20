@@ -1,5 +1,5 @@
 header {
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   width: 100%;
@@ -9,6 +9,7 @@ header {
 
   @media screen and (max-width: $mobile-menu-breakpoint + 1px) {
     padding: 10px 20px;
+    background: #f5fcf8;
   }
 
   .container {
