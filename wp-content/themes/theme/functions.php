@@ -51,6 +51,11 @@ show_admin_bar(false);
 
 add_theme_support('menus');
 
+
+register_nav_menus(array(
+    'footer_menu'    => 'Footer menu',
+));
+
 // SVG support
 function cc_mime_types($mimes)
 {
@@ -118,6 +123,16 @@ if (function_exists('acf_register_block_type')) {
             'title'             => __('Clients'),
             'description'       => __('Just another awesome block.'),
             'render_template'   => 'blocks/clients/block.php',
+            'category'          => 'common',
+            'icon'              => 'book-alt',
+            'keywords'          => array('block', 'custom'),
+            'supports'          => array('anchor' => true)
+        ));
+        acf_register_block_type(array(
+            'name'              => 'form',
+            'title'             => __('Form'),
+            'description'       => __('Just another awesome block.'),
+            'render_template'   => 'blocks/form/block.php',
             'category'          => 'common',
             'icon'              => 'book-alt',
             'keywords'          => array('block', 'custom'),

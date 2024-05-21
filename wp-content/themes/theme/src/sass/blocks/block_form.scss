@@ -1,0 +1,130 @@
+.form {
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__container {
+        max-width: 1210px;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding: 120px 0;
+
+        @media screen and (max-width: $mobile-menu-breakpoint) {
+            flex-direction: column;
+            padding: 60px 0;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @media screen and (max-width: $mobile-menu-breakpoint) {
+margin-bottom: 15px;        }
+    }
+
+    &__title {
+        font-family: Italiana;
+        font-size: 70px;
+        letter-spacing: 2.8px;
+        line-height: normal;
+
+        @media screen and (max-width: $mobile-menu-breakpoint) {
+            font-size: 60px;
+        }
+    }
+
+    &__info {
+        font-size: 20px;
+    }
+
+    &__mail {
+        display: block;
+        width: fit-content;
+        color: #69ae96;
+        margin-bottom: 13px;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 1px;
+            background: #69ae96;
+            bottom: 5px;
+            left: 0;
+        }
+    }
+
+    &__adress {
+        margin-bottom: -8px;
+    }
+
+    &__fields {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        max-width: 570px;
+        width: 100%;
+
+        @media screen and (max-width: 1200px) {
+            max-width: 500px;
+        }
+    }
+
+    &__field {
+        border: 1px #c9ccd4 solid;
+        border-radius: 6px;
+        background: #fff;
+        color: #c9ccd4;
+        font-size: 16px;
+        font-weight: 300;
+        height: 60px;
+        padding: 0 22px;
+        font-family: inherit;
+        transition: all .3s;
+
+
+        &::placeholder {
+            color: #000;
+            opacity: 0.5;
+        }
+
+        &:hover {
+            border-color: #3b7a64;
+        }
+
+        &:focus {
+            border-color: #3b7a64;
+            box-shadow: 0px 0px 13px 1px rgba(105, 174, 150, 1);
+        }
+    }
+
+    &__textarea {
+        font-size: 16px;
+        padding-top: 17px;
+        min-height: 132px;
+        margin-bottom: 16px;
+    }
+
+    &__button {
+        box-shadow: 0 12px 24px 0 rgba(44, 39, 56, 0.08);
+        font-family: inherit;
+        line-height: normal;
+        font-size: 16px;
+        cursor: pointer;
+
+        img {
+            width: 21px;
+            margin-right: 8px;
+        }
+    }
+}
+
+.error {
+    border: 1px red solid;
+
+}

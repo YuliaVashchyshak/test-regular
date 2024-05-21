@@ -19,7 +19,7 @@ $the_query = new WP_Query($args);
                 <div class="clients__top">
                     <h3 class="clients__title"> <?php the_field('title') ?> </h3>
                     <div class="clients__btns">
-                        <div class="swiper-button swiper-button-prev clients__btn ">
+                        <button class="swiper-button swiper-button-prev clients__btn ">
                             <svg fill="#000000" height="20px" width="40px" version="1.1" id="Layer_1"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                 viewBox="0 0 330 330" xml:space="preserve" transform="matrix(-1, 0, 0, 1, 0, 0)">
@@ -31,8 +31,8 @@ $the_query = new WP_Query($args);
                                     </path>
                                 </g>
                             </svg>
-                        </div>
-                        <div class="swiper-button swiper-button-next clients__btn">
+                        </button>
+                        <button class="swiper-button swiper-button-next clients__btn">
                             <svg fill="#000000" height="20px" width="40px" version="1.1" id="Layer_1"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                 viewBox="0 0 330 330" xml:space="preserve">
@@ -44,8 +44,7 @@ $the_query = new WP_Query($args);
                                     </path>
                                 </g>
                             </svg>
-
-                        </div>
+                        </button>
                     </div>
                 </div>
                 <div class="clients__slider-container">
@@ -53,9 +52,11 @@ $the_query = new WP_Query($args);
                         <div class="swiper-wrapper clients__slider-wrapper">
                             <?php while ($the_query->have_posts()) { ?>
                                 <?php $the_query->the_post(); ?>
-                                <div class="clients__item swiper-slide" style="background-image: url(<?php  bloginfo('template_url') ?>/src/sass/image/bg.png)">
+                                <div class="clients__item swiper-slide"
+                                    style="background-image: url(<?php bloginfo('template_url') ?>/src/sass/image/bg.png)">
                                     <div class="clients__media">
-                                        <div class="clients__play-btn play-video" data-video="<?php the_field('video', get_the_ID()) ?>">
+                                        <div class="clients__play-btn play-video"
+                                            data-video="<?php the_field('video', get_the_ID()) ?>">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26">
                                                 <polygon class="play-btn__svg"
                                                     points="9.33 6.69 9.33 19.39 19.3 13.04 9.33 6.69" />
