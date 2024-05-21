@@ -10,12 +10,6 @@
     href="https://fonts.googleapis.com/css2?family=Italiana&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
 
-  <!--[if lte IE 9 ]>
-  <script>
-    alert('Browser version is too old and site will not be displayed correctly. Please, upgrade your browser.');
-  </script>
-  <![endif]-->
-
   <?php wp_head(); ?>
 </head>
 

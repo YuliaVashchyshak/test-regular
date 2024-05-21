@@ -5,7 +5,7 @@ add_action('wp_enqueue_scripts', function () {
     if (is_admin())
         return; // don't dequeue on the backend
     wp_deregister_script('jquery');
-    wp_register_script('jquery', get_stylesheet_directory_uri() . '/src/js/vendor/jquery.min.js', array(), null, false);
+    wp_register_script('jquery', get_stylesheet_directory_uri() . '/src/js/vendor/jquery.min.js', array (), null, false);
     wp_enqueue_script('jquery');
 });
 
@@ -52,9 +52,11 @@ show_admin_bar(false);
 add_theme_support('menus');
 
 
-register_nav_menus(array(
-    'footer_menu'    => 'Footer menu',
-));
+register_nav_menus(
+    array(
+        'footer_menu' => 'Footer menu',
+    )
+);
 
 // SVG support
 function cc_mime_types($mimes)
@@ -90,54 +92,62 @@ function wpse_theme_setup()
 }
 
 
-require_once(__DIR__ . '/core/core.php');
+require_once (__DIR__ . '/core/core.php');
 
 
 if (function_exists('acf_register_block_type')) {
     add_action('acf/init', 'register_acf_blocks');
     function register_acf_blocks()
     {
-        acf_register_block_type(array(
-            'name'              => 'hero',
-            'title'             => __('Hero'),
-            'description'       => __('Just another awesome block.'),
-            'render_template'   => 'blocks/hero/block.php',
-            'category'          => 'common',
-            'icon'              => 'book-alt',
-            'keywords'          => array('block', 'custom'),
-            'supports'          => array('anchor' => true)
-        ));
+        acf_register_block_type(
+            array(
+                'name' => 'hero',
+                'title' => __('Hero'),
+                'description' => __('Just another awesome block.'),
+                'render_template' => 'blocks/hero/block.php',
+                'category' => 'common',
+                'icon' => 'book-alt',
+                'keywords' => array('block', 'custom'),
+                'supports' => array('anchor' => true)
+            )
+        );
 
-        acf_register_block_type(array(
-            'name'              => 'seo',
-            'title'             => __('Seo'),
-            'description'       => __('Just another awesome block.'),
-            'render_template'   => 'blocks/seo/block.php',
-            'category'          => 'common',
-            'icon'              => 'book-alt',
-            'keywords'          => array('block', 'custom'),
-            'supports'          => array('anchor' => true)
-        ));
-        acf_register_block_type(array(
-            'name'              => 'clients',
-            'title'             => __('Clients'),
-            'description'       => __('Just another awesome block.'),
-            'render_template'   => 'blocks/clients/block.php',
-            'category'          => 'common',
-            'icon'              => 'book-alt',
-            'keywords'          => array('block', 'custom'),
-            'supports'          => array('anchor' => true)
-        ));
-        acf_register_block_type(array(
-            'name'              => 'form',
-            'title'             => __('Form'),
-            'description'       => __('Just another awesome block.'),
-            'render_template'   => 'blocks/form/block.php',
-            'category'          => 'common',
-            'icon'              => 'book-alt',
-            'keywords'          => array('block', 'custom'),
-            'supports'          => array('anchor' => true)
-        ));
+        acf_register_block_type(
+            array(
+                'name' => 'seo',
+                'title' => __('Seo'),
+                'description' => __('Just another awesome block.'),
+                'render_template' => 'blocks/seo/block.php',
+                'category' => 'common',
+                'icon' => 'book-alt',
+                'keywords' => array('block', 'custom'),
+                'supports' => array('anchor' => true)
+            )
+        );
+        acf_register_block_type(
+            array(
+                'name' => 'clients',
+                'title' => __('Clients'),
+                'description' => __('Just another awesome block.'),
+                'render_template' => 'blocks/clients/block.php',
+                'category' => 'common',
+                'icon' => 'book-alt',
+                'keywords' => array('block', 'custom'),
+                'supports' => array('anchor' => true)
+            )
+        );
+        acf_register_block_type(
+            array(
+                'name' => 'form',
+                'title' => __('Form'),
+                'description' => __('Just another awesome block.'),
+                'render_template' => 'blocks/form/block.php',
+                'category' => 'common',
+                'icon' => 'book-alt',
+                'keywords' => array('block', 'custom'),
+                'supports' => array('anchor' => true)
+            )
+        );
     }
 }
 
@@ -152,12 +162,50 @@ function clients_posttype()
                 'name' => __('Clients', 'textdomain'),
                 'singular_name' => __('Client', 'textdomain'),
             ),
-            'public'        => true,
-            'has_archive'  => true,
+            'public' => true,
+            'has_archive' => true,
             'hierarchical' => false,
             'supports' => array('title', 'author', 'page-attributes', 'thumbnail', 'editor'),
-            'rewrite'  => array('slug' => 'clients'),
+            'rewrite' => array('slug' => 'clients'),
         )
     );
-    }
+}
 //== end add custom post type ==//
+
+
+//==  start contact form ==//
+
+function contact_form()
+{
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $textarea = $_POST['textarea'];
+
+    if (!$name || !$email || !$textarea) {
+        echo 400;
+        die;
+    }
+
+    $to = get_option('admin_email');
+    $subject = 'The subject';
+    $message = '
+    Name: ' . $name . ',
+    Email: ' . $email . ',
+    Textarea: ' . $textarea . ',
+    ';
+
+    $mail = wp_mail($to, $subject, $message);
+
+    if ($mail) {
+        echo 200;
+        die;
+    } else {
+        echo 400;
+        die;
+    }
+}
+add_action('wp_ajax_contact_form', 'contact_form');
+add_action('wp_ajax_nopriv_contact_form', 'contact_form');
+
+
+//==  end contact form ==//

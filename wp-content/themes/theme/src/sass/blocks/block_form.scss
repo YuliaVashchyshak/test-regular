@@ -23,7 +23,8 @@
         justify-content: space-between;
 
         @media screen and (max-width: $mobile-menu-breakpoint) {
-margin-bottom: 15px;        }
+            margin-bottom: 15px;
+        }
     }
 
     &__title {
@@ -64,6 +65,7 @@ margin-bottom: 15px;        }
     }
 
     &__fields {
+        position: relative;
         display: flex;
         flex-direction: column;
         gap: 16px;
@@ -122,9 +124,48 @@ margin-bottom: 15px;        }
             margin-right: 8px;
         }
     }
+
+    &__loader {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    &__success,
+    &__fail {
+        margin-bottom: 10px;
+        font-size: 20px;
+        color: #69ae96;
+        transition: all .3s;
+        display: none;
+
+        &.active {
+            display: block;
+        }
+
+    }
 }
+
 
 .error {
     border: 1px red solid;
 
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

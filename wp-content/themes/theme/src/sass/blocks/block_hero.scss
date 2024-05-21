@@ -26,6 +26,7 @@
     @media screen and (max-width: $mobile-menu-breakpoint) {
       height: 600px;
     }
+
     @media screen and (max-width: $mobile-menu-breakpoint768) {
       height: 400px;
       margin-top: 100px;
@@ -45,6 +46,7 @@
     @media screen and (max-width: $mobile-menu-breakpoint) {
       margin-bottom: 150px;
     }
+
     @media screen and (max-width: $mobile-menu-breakpoint768) {
       margin-bottom: 35px;
     }
@@ -60,6 +62,7 @@
     @media screen and (max-width: $mobile-menu-breakpoint) {
       font-size: 60px;
     }
+
     @media screen and (max-width: $mobile-menu-breakpoint768) {
       font-size: 50px;
     }
@@ -85,6 +88,7 @@
 
   &__link {
     margin-bottom: 30px;
+
     @media screen and (max-width: $mobile-menu-breakpoint768) {
       position: relative;
       z-index: 3;
