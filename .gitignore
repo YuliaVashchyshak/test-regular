@@ -6,7 +6,7 @@
 **/ai1wm-backups
 **/all-in-one-wp-migration
 **/w3-total-cache
-wp-content/uploads/**
+
 **/debug.log
 **/lcwll
 **/backups-dup-lite
